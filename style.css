@@ -39,6 +39,12 @@ header {
   flex-wrap: wrap;
 }
 
+.site-logo {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+}
+
 .site-title {
   font-family: 'Cinzel', serif;
   color: var(--gold);

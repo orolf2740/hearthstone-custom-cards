@@ -22,8 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   let current = 0;
 
+  const classNavLinks = document.querySelectorAll('.class-nav a');
+  const prevClassUrl = classNavLinks[0] ? classNavLinks[0].href : null;
+  const nextClassUrl = classNavLinks[1] ? classNavLinks[1].href : null;
+
   function show(index) {
-    current = (index + images.length) % images.length;
+    if (index < 0) {
+      if (prevClassUrl) {
+        sessionStorage.setItem('lbOpen', 'last');
+        window.location.href = prevClassUrl;
+      }
+      return;
+    }
+    if (index >= images.length) {
+      if (nextClassUrl) {
+        sessionStorage.setItem('lbOpen', 'first');
+        window.location.href = nextClassUrl;
+      }
+      return;
+    }
+    current = index;
     img.src = images[current].src;
   }
 
@@ -45,4 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') show(current - 1);
     if (e.key === 'ArrowRight') show(current + 1);
   });
+
+  // Auto-open lightbox when arriving from another class
+  const openAt = sessionStorage.getItem('lbOpen');
+  if (openAt && images.length > 0) {
+    sessionStorage.removeItem('lbOpen');
+    current = openAt === 'last' ? images.length - 1 : 0;
+    img.src = images[current].src;
+    overlay.classList.add('active');
+  }
 });
