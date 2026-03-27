@@ -21,7 +21,7 @@ Colors are vivid and punchy
 No dull palettes unless stylistically intentional
 Color contrast for focus
 Subject color contrasts with background
-Warm vs cool contrast is very common
+Warm vs cool contrast is very common 
 
 🖌️ 3. Brushwork & Rendering Style
 Painterly, not photorealistic
