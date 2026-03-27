@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #060f0a;
+  --surface: #0d2018;
+  --card-bg: #122a1e;
+  --gold: #3da86e;
+  --gold-light: #8ecfaa;
+  --text: #b5d9c3;
+  --border: #1f5535;
+  --shadow: rgba(0, 0, 0, 0.6);
+  --glow: rgba(61, 168, 110, 0.4);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ── Header ── */
+header {
+  background: var(--surface);
+  border-bottom: 2px solid var(--gold);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.3rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-title:hover { text-decoration: underline; }
+
+nav.breadcrumb {
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+nav.breadcrumb a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+nav.breadcrumb a:hover { text-decoration: underline; }
+
+nav.breadcrumb .sep {
+  margin: 0 0.4rem;
+  color: var(--border);
+}
+
+/* ── Main ── */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ── Typography ── */
+h1 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold-light);
+  font-size: 1.3rem;
+  margin: 2.5rem 0 1rem;
+}
+
+h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+p { margin-bottom: 0.8rem; }
+
+.subtitle {
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* ── Banner ── */
+.banner {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+/* ── Card grid ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-item img {
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+  transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+  display: block;
+  cursor: zoom-in;
+}
+
+.card-item img:hover {
+  transform: scale(1.06);
+  border-color: var(--gold);
+  box-shadow: 0 6px 24px var(--glow);
+  position: relative;
+  z-index: 2;
+}
+
+.card-name {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text);
+  margin-top: 0.35rem;
+  text-transform: capitalize;
+}
+
+/* ── Class grid (expansion overview) ── */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.class-link {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  transition: border-color 0.18s, background 0.18s, transform 0.18s;
+  display: block;
+}
+
+.class-link:hover {
+  border-color: var(--gold);
+  background: #1a3d28;
+  transform: translateY(-3px);
+}
+
+/* ── Home page ── */
+.section-label {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.content-card {
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.18s, transform 0.18s;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.content-card img.thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.content-card .info {
+  padding: 1.1rem;
+  flex: 1;
+}
+
+.content-card .info h3 { margin-bottom: 0.4rem; }
+
+.content-card .info p {
+  font-size: 0.85rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ── Monk core page ── */
+.keyword-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.keyword-row img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  cursor: zoom-in;
+}
+
+.hero-power-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.hero-power-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-power-item img {
+  max-width: 220px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  cursor: zoom-in;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.hero-power-item img:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px var(--glow);
+}
+
+.hero-power-label {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+  font-family: 'Cinzel', serif;
+}
+
+.portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.portrait-grid .portrait-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portrait-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: zoom-in;
+}
+
+.portrait-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px var(--glow);
+}
+
+.portrait-name {
+  font-size: 0.8rem;
+  color: var(--text);
+  text-align: center;
+}
+
+/* ── Lightbox ── */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+#lightbox-overlay.active {
+  display: flex;
+}
+
+#lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--border);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  main { padding: 1rem; }
+  header { padding: 0.8rem 1rem; }
+  h1 { font-size: 1.5rem; }
+  .card-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
